@@ -1,5 +1,9 @@
+body{
+    background-color:  #E5E5E5;
+}
+
 .header-title{
-    font-family: 'Righteous', cursive;
+    font-family: 'Righteous';
     color: rgba(255, 255, 255, 1);
     font-size: 44px;
     font-weight: 400;
@@ -8,7 +12,7 @@
 }
 
 .header-subtitle{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto';
     color: rgba(255, 255, 255, 1);
     font-size: 18px;
     font-weight: 400;
@@ -26,6 +30,7 @@
     justify-content: flex-start;
     padding-left: 21px;
     padding-top: 8px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 header{
@@ -33,4 +38,101 @@ header{
     left: 0;
     top: 0;
     width: 100%;
+}
+
+.website{
+    margin-top: 102px;
+    margin-left: 19px;
+    height: auto;
+    margin-bottom: 16px;
+    
+}
+
+.dish-section{
+    height: auto;
+    padding-top: 20px;
+}
+
+.drink-section{
+    height: auto;
+    margin-top: 27px;
+}
+
+.dessert-section{
+    height: auto;
+    margin-top: 27px;
+}
+
+.dish-section-title{
+    font-family: 'Righteous';
+    color: rgba(51, 51, 51, 1);
+    font-size: 26px;
+    font-weight: 400;
+    height: 25px;
+    line-height: 32px;
+}
+
+
+.dishes-container{
+    padding-top: 17px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: auto;
+}
+
+.dish{
+    margin-right: 16px;
+    width: 172px;
+    height: auto;
+    border-radius: 9px;
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dish-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.dish img{
+    width: 144px;
+    height: 87px;
+    border-radius: 4px;
+    padding-top: 18px;
+}
+
+.dish-title{
+    width: 144px;
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(51, 51, 51, 1);
+    padding-top: 8px;
+}
+
+.dish-description{
+    width: 144px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+    color: rgba(166, 166, 166, 1);
+    padding-top: 4px;
+}
+
+.dish-price{
+    width: 144px;
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color:rgba(0, 0, 0, 1);
+    padding-top: 5px;
+    padding-bottom: 13px;
 }
