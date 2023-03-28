@@ -44,8 +44,7 @@ header{
     margin-top: 102px;
     margin-left: 19px;
     height: auto;
-    margin-bottom: 16px;
-    
+    margin-bottom: 108px;
 }
 
 .dish-section{
@@ -72,6 +71,10 @@ header{
     line-height: 32px;
 }
 
+.dishes-container::-webkit-scrollbar {
+    display: none;
+}
+
 
 .dishes-container{
     padding-top: 17px;
@@ -79,6 +82,7 @@ header{
     flex-direction: row;
     justify-content: flex-start;
     height: auto;
+    overflow: scroll;
 }
 
 .dish{
@@ -104,6 +108,8 @@ header{
     height: 87px;
     border-radius: 4px;
     padding-top: 18px;
+    padding-right: 14px;
+    padding-left: 14px;
 }
 
 .dish-title{
@@ -114,6 +120,7 @@ header{
     line-height: 19px;
     color: rgba(51, 51, 51, 1);
     padding-top: 8px;
+    padding-left: 14px;
 }
 
 .dish-description{
@@ -124,6 +131,7 @@ header{
     line-height: 18px;
     color: rgba(166, 166, 166, 1);
     padding-top: 4px;
+    padding-left: 14px;
 }
 
 .dish-price{
@@ -135,4 +143,56 @@ header{
     color:rgba(0, 0, 0, 1);
     padding-top: 5px;
     padding-bottom: 13px;
+    padding-left: 14px;
+}
+
+.checkout-bar{
+    height: 92px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+
+
+.checkout-btn{
+    width:100%;
+    height: 61px;
+
+    border-radius: 50px;
+
+    background-color: #cbcbcb;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 4%;
+    margin-right: 4%;
+
+    overflow: hidden; 
+    text-overflow: ellipsis;
+
+    color: white;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0.018em;
+    text-align: center;
+}
+
+.checkout-btn p {
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: 'Roboto';
+    text-align: center;
 }
