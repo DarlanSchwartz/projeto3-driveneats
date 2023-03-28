@@ -10,7 +10,11 @@ const desserts = document.querySelectorAll('.dessert-content');
 
 const checkoutButton = document.querySelector('.checkout-btn');
 
-checkoutButton.addEventListener('click', () => {})
+let value1;
+let value2;
+let value3;
+
+checkoutButton.addEventListener('click',AlertCheckoutAmount);
 
   dishes.forEach(dish => {
     dish.addEventListener('click', () => {
@@ -80,13 +84,36 @@ checkoutButton.addEventListener('click', () => {})
         checkoutButton.textContent = "Fechar pedido";
         checkoutButton.style.backgroundColor = "rgba(50, 183, 47, 1)";
         checkoutButton.style.cursor = "pointer";
+        canBuy = true;
     }
     else
     {
         checkoutButton.textContent = "Selecione os 3 itens para fechar o pedido";
         checkoutButton.style.backgroundColor = "rgba(203, 203, 203, 1)";
         checkoutButton.style.cursor = "not-allowed";
+        canBuy = false;
     }
   }
+
+  function AlertCheckoutAmount()
+  {
+    value1= selectedDish.querySelector('.dish-price').textContent.split(' ');
+    value2= selectedDrink.querySelector('.dish-price').textContent.split(' ');
+    value3= selectedDessert.querySelector('.dish-price').textContent.split(' ');
+
+    value1[1] = value1[1].replace(',','.');
+    value2[1] = value2[1].replace(',','.');
+    value3[1] = value3[1].replace(',','.');
+
+    value1 = parseFloat(value1[1]);
+    value2 = parseFloat(value2[1]);
+    value3 = parseFloat(value3[1]);
+
+    let totalValue = (value1 + value2 + value3).toFixed(2);
+
+
+    alert(totalValue + " Ao todo");
+  }
+
 
 
