@@ -101,35 +101,32 @@
     line-height: 26px;
 }
 
-.confirm-checkout-btn{
+.confirm-checkout-btn,
+.cancel-checkout-btn{
     font-weight: 700;
+    font-family: 'Roboto';
+    z-index: 5;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 52px;
+}
+
+.confirm-checkout-btn{
     font-size: 22px;
     line-height: 26px;
     text-align: center;
     color: rgba(80, 208, 116, 1);
-    font-family: 'Roboto';
-    height: 52px;
     background-color: white;
     width: 90%;
     border-radius: 100px;
-    display: flex;
-    align-items: center;
     justify-content: center;
     margin-top: 22px;
-    cursor: pointer;
-    z-index: 5;
 }
 
 .cancel-checkout-btn{
-    font-family: 'Roboto';
     font-size: 20px;
     line-height: 24px;
-    font-weight: 700;
     color: white;
-    z-index: 5;
-    height: 52px;
     text-align: center;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
 }

@@ -9,6 +9,7 @@ body{
     font-weight: 400;
     height: 44px;
     line-height: 54.63px;
+    letter-spacing: -0.012em;
 }
 
 .header-subtitle{
@@ -39,6 +40,7 @@ header{
     top: 0;
     width: 100%;
     z-index: 2;
+    height: 92px;
 }
 
 .website{
@@ -47,19 +49,15 @@ header{
     margin-bottom: 108px;
 }
 
+.drink-section,
+.dessert-section,
 .dish-section{
     height: auto;
-    padding-top: 20px;
-}
-
-.drink-section{
-    height: auto;
     margin-top: 27px;
 }
 
-.dessert-section{
-    height: auto;
-    margin-top: 27px;
+.dish-section{
+    padding-top: 31px;
 }
 
 .dish-section-title{
@@ -67,7 +65,7 @@ header{
     color: rgba(51, 51, 51, 1);
     font-size: 26px;
     font-weight: 400;
-    height: 25px;
+    height: auto;
     line-height: 32px;
     margin-left: 19px;
 }
@@ -80,28 +78,14 @@ header{
     color: #32B72F;
 }
 
-.dish-content ion-icon{
-    color: #32B72F;
-    position: absolute;
-    right: 13px;
-    bottom: 16px;
-    font-size: 18px;
-}
-
-.drink-content ion-icon{
-    color: #32B72F;
-    position: absolute;
-    right: 13px;
-    bottom: 16px;
-    font-size: 18px;
-}
-
+.dish-content ion-icon,
+.drink-content ion-icon,
 .dessert-content ion-icon{
     color: #32B72F;
     position: absolute;
-    right: 13px;
-    bottom: 16px;
-    font-size: 18px;
+    right: 9px;
+    bottom: 13px;
+    font-size: 20px;
 }
 
 .dishes-container{
@@ -113,6 +97,7 @@ header{
     overflow: scroll;
     box-sizing: border-box;
     padding-left: 19px;
+    padding-right: 19px;
     gap: 16px;
 }
 
@@ -130,6 +115,7 @@ header{
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .dish-content,
@@ -150,40 +136,40 @@ header{
     padding-top: 18px;
     padding-right: 14px;
     padding-left: 14px;
+    border-radius: 4px;
+}
+
+.dish-title,
+.dish-description,
+.dish-price{
+    width: 144px;
+    font-family: 'Roboto';
+    padding-left: 14px;
 }
 
 .dish-title{
-    width: 144px;
-    font-family: 'Roboto';
     font-weight: 700;
     font-size: 16px;
     line-height: 19px;
     color: rgba(51, 51, 51, 1);
     padding-top: 15px;
-    padding-left: 14px;
 }
 
 .dish-description{
-    width: 144px;
-    font-family: 'Roboto';
     font-weight: 300;
     font-size: 15px;
     line-height: 18px;
     color: rgba(166, 166, 166, 1);
     padding-top: 4px;
-    padding-left: 14px;
 }
 
 .dish-price{
-    width: 144px;
-    font-family: 'Roboto';
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
     color:rgba(0, 0, 0, 1);
     padding-top: 5px;
     padding-bottom: 13px;
-    padding-left: 14px;
 }
 
 .checkout-bar{
@@ -199,7 +185,7 @@ header{
 }
 
 .checkout-btn{
-    width:100%;
+    width:90%;
     height: 61px;
 
     border-radius: 50px;
@@ -217,14 +203,13 @@ header{
     text-overflow: ellipsis;
 
     color: white;
-    font-family: Roboto;
+    font-family: 'Roboto';
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: 23px;
     letter-spacing: 0.018em;
     text-align: center;
-
     cursor: not-allowed;
 }
 
