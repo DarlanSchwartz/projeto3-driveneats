@@ -7,12 +7,7 @@ let selectedDessert = null;
 const dishes = document.querySelectorAll('.dish-content');
 const drinks = document.querySelectorAll('.drink-content');
 const desserts = document.querySelectorAll('.dessert-content');
-
 const checkoutButton = document.querySelector('.checkout-btn');
-
-let value1;
-let value2;
-let value3;
 
 checkoutButton.addEventListener('click',AlertCheckoutAmount);
 
@@ -97,22 +92,34 @@ checkoutButton.addEventListener('click',AlertCheckoutAmount);
 
   function AlertCheckoutAmount()
   {
-    value1= selectedDish.querySelector('.dish-price').textContent.split(' ');
-    value2= selectedDrink.querySelector('.dish-price').textContent.split(' ');
-    value3= selectedDessert.querySelector('.dish-price').textContent.split(' ');
+    
+    if(!canBuy)
+    {
+      return;
+    }
 
-    value1[1] = value1[1].replace(',','.');
-    value2[1] = value2[1].replace(',','.');
-    value3[1] = value3[1].replace(',','.');
+    let dishValue= selectedDish.querySelector('.dish-price').textContent.split(' ');
+    let drinkValue= selectedDrink.querySelector('.dish-price').textContent.split(' ');
+    let dessertValue= selectedDessert.querySelector('.dish-price').textContent.split(' ');
 
-    value1 = parseFloat(value1[1]);
-    value2 = parseFloat(value2[1]);
-    value3 = parseFloat(value3[1]);
+    let dishName = selectedDish.querySelector('.dish-title').textContent;
+    let drinkName = selectedDrink.querySelector('.dish-title').textContent;
+    let dessertName = selectedDessert.querySelector('.dish-title').textContent;
 
-    let totalValue = (value1 + value2 + value3).toFixed(2);
+    dishValue[1] = dishValue[1].replace(',','.');
+    drinkValue[1] = drinkValue[1].replace(',','.');
+    dessertValue[1] = dessertValue[1].replace(',','.');
+
+    dishValue = parseFloat(dishValue[1]);
+    drinkValue = parseFloat(drinkValue[1]);
+    dessertValue = parseFloat(dessertValue[1]);
+
+    let totalValue = (dishValue + drinkValue + dessertValue).toFixed(2);
 
 
     alert(totalValue + " Ao todo");
+    alert(dishName + drinkName + dessertName);
+    //Show last screen
   }
 
 
