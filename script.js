@@ -4,12 +4,19 @@ let selectedDish = null;
 let selectedDrink = null;
 let selectedDessert = null;
 
+let formattedText = "";
+
 const dishes = document.querySelectorAll('.dish-content');
 const drinks = document.querySelectorAll('.drink-content');
 const desserts = document.querySelectorAll('.dessert-content');
 const checkoutButton = document.querySelector('.checkout-btn');
+const confirmWindow = document.querySelector('.confirm-window');
+const cancelCheckoutButton = document.querySelector('.cancel-checkout-btn');
+const confirmCheckoutButton = document.querySelector('.confirm-checkout-btn');
 
-checkoutButton.addEventListener('click',AlertCheckoutAmount);
+cancelCheckoutButton.addEventListener('click',CloseCheckoutWindow);
+checkoutButton.addEventListener('click',Checkout);
+confirmCheckoutButton.addEventListener('click',ConfirmCheckout);
 
   dishes.forEach(dish => {
     dish.addEventListener('click', () => {
@@ -90,7 +97,7 @@ checkoutButton.addEventListener('click',AlertCheckoutAmount);
     }
   }
 
-  function AlertCheckoutAmount()
+  function Checkout()
   {
     
     if(!canBuy)
@@ -106,6 +113,15 @@ checkoutButton.addEventListener('click',AlertCheckoutAmount);
     let drinkName = selectedDrink.querySelector('.dish-title').textContent;
     let dessertName = selectedDessert.querySelector('.dish-title').textContent;
 
+    confirmWindow.querySelector('.dish-order-name').textContent = dishName;
+    confirmWindow.querySelector('.dish-order-price').textContent = dishValue[1];
+
+    confirmWindow.querySelector('.drink-order-name').textContent = drinkName;
+    confirmWindow.querySelector('.drink-order-price').textContent = drinkValue[1];
+
+    confirmWindow.querySelector('.dessert-order-name').textContent = dessertName;
+    confirmWindow.querySelector('.dessert-order-price').textContent = dessertValue[1];
+
     dishValue[1] = dishValue[1].replace(',','.');
     drinkValue[1] = drinkValue[1].replace(',','.');
     dessertValue[1] = dessertValue[1].replace(',','.');
@@ -116,10 +132,22 @@ checkoutButton.addEventListener('click',AlertCheckoutAmount);
 
     let totalValue = (dishValue + drinkValue + dessertValue).toFixed(2);
 
+    confirmWindow.querySelector('.total-value').textContent = "R$ " + totalValue.replace('.',',');
+    confirmWindow.style.display = "flex";
 
-    alert(totalValue + " Ao todo");
-    alert(dishName + drinkName + dessertName);
-    //Show last screen
+    formattedText = "Olá, gostaria de fazer o pedido: - Prato: "+ dishName + " - Bebida: " + drinkName + " - Sobremesa: " + dessertName + " ------ Total:" + "R$ " + totalValue.replace('.',',');
+  }
+
+  function CloseCheckoutWindow ()
+  {
+    confirmWindow.style.display = "none";
+  }
+
+  function ConfirmCheckout()
+  {
+    window.open("https://wa.me/51998788448?text=" + formattedText, "_blank");
+    
+    //https://wa.me/51998788448?text=urlencodedtext
   }
 
 
