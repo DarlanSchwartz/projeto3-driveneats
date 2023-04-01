@@ -160,7 +160,17 @@ confirmCheckoutButton.addEventListener('click',ConfirmCheckout);
     confirmWindow.style.display = "flex";
 
     // Montar um texto com o nome e valor total dos items selecionados para este checkout
-    formattedText = ("Olá, gostaria de fazer o pedido: %0a- Prato: "+ dishName + "%0A - Bebida: " + drinkName + "%0A - Sobremesa: " + dessertName + "%0A Total : " + "R$ " + totalValue.replace('.',','));
+    //formattedText = ("Olá, gostaria de fazer o pedido: %0a- Prato: "+ dishName + "%0A - Bebida: " + drinkName + "%0A - Sobremesa: " + dessertName + "%0A Total: " + "R$ " + totalValue.replace('.',','));    encodeURIComponent(
+      formattedText = encodeURIComponent(
+      "Olá, gostaria de fazer o pedido:\n- Prato: " +
+      dishName +
+      "\n- Bebida: " +
+      drinkName +
+      "\n- Sobremesa: " +
+      dessertName +
+      "\nTotal: R$ " +
+      totalValue.replace('.',',')
+  );
   }
 
   // Fechar a tela de checkout
@@ -175,14 +185,16 @@ confirmCheckoutButton.addEventListener('click',ConfirmCheckout);
     //Perguntar nome e endereço e concatenar ao texto que iniciará a conversa do whatssapp
     let userName = prompt('Qual o seu nome?');
     let userAdress = prompt('Qual o seu endereço?');
-    window.open("https://wa.me/5551998788448?text=" + formattedText + "%0A Seu nome: " + userName + "%0A Seu endereço: " + userAdress, "_blank");
-    
-    //  https://wa.me/99999999?text=urlencodedtext
-   /* Olá, gostaria de fazer o pedido:
-- Prato: Frango Yin Yang
-- Bebida: Coquinha Gelada
-- Sobremesa: Pudim
-Total: R$ 27,70*/
+
+    if(userName == "" || userAdress == "" )
+    {
+      window.open("https://wa.me/5551998788448?text=" + formattedText , "_blank");
+    }
+    else
+    {
+      let userInfoText = encodeURIComponent("\n\nNome: " +userName +"\nEndereço: " + userAdress);
+      window.open("https://wa.me/5551998788448?text=" + formattedText + userInfoText, "_blank");
+    }
   }
 
 
