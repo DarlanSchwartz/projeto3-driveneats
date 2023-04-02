@@ -1,3 +1,5 @@
+
+
 let canBuy = false;
 
 let selectedDish = null;
@@ -160,7 +162,6 @@ confirmCheckoutButton.addEventListener('click',ConfirmCheckout);
     confirmWindow.style.display = "flex";
 
     // Montar um texto com o nome e valor total dos items selecionados para este checkout
-    //formattedText = ("Olá, gostaria de fazer o pedido: %0a- Prato: "+ dishName + "%0A - Bebida: " + drinkName + "%0A - Sobremesa: " + dessertName + "%0A Total: " + "R$ " + totalValue.replace('.',','));    encodeURIComponent(
       formattedText = encodeURIComponent(
       "Olá, gostaria de fazer o pedido:\n- Prato: " +
       dishName +
@@ -185,8 +186,8 @@ confirmCheckoutButton.addEventListener('click',ConfirmCheckout);
     //Perguntar nome e endereço e concatenar ao texto que iniciará a conversa do whatssapp
     let userName = prompt('Qual o seu nome?');
     let userAdress = prompt('Qual o seu endereço?');
-
-    if(userName == "" || userAdress == "" )
+    // Check se foram preenchidos os campos de nome e endereço
+    if(userName == "" || userAdress == "")
     {
       window.open("https://wa.me/5551998788448?text=" + formattedText , "_blank");
     }
